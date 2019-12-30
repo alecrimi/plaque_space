@@ -1,7 +1,10 @@
-
+% This script loads data from a series of folders, performs dimensionality reduction (T-SNE) and plot the first 2 components.
+%
+% A. Crimi 2019
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Param settings
 folders_list={'AB_old','AB_young','LCP_old','LCP_young','BACE1_old','BACE1_young'}; %
-
-%list = dir([folder '/*.tif']);
 
 %Change this to change the used features
 feature_name = 'sizes' ;   
@@ -19,6 +22,9 @@ sorting = {'max_proj'};
 disp('Remember the stochastic nature of T-SNE, run the algorithm several times to see different results');
 tsne_repetitions = 5;
 perplexity_values = [ 5 10];        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Core Script
 
 %For all sorting
 for ss = 1 : length(sorting)
