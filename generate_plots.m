@@ -13,7 +13,7 @@ feature_name = 'sizes' ;
 %This should be defined automatically, but in the data produced by  Ehsan Dadgar-Kiani, the max projection was always giving data of this size 
 datasize_maxproj = 5250; 
 datasize = 58464;  
-datapoints =  zeros(29*2, datasize_maxproj  );     %58464  69564  5250
+n_samples = 55;
 
 %sorting = {'default'};
 %sorting = {'default','max_proj'};
@@ -31,9 +31,9 @@ for ss = 1 : length(sorting)
 
      alg = sorting{ss};
      if( strcmp(alg,'max_proj'))
-       datapoints =  zeros(length(list),  datasize_maxproj );     %58464  69564
+       datapoints =  zeros(n_samples,  datasize_maxproj );     %58464  69564
      else
-       datapoints =  zeros(length(list),  datasize );     %58464  69564 
+       datapoints =  zeros(n_samples,  datasize );     %58464  69564 
      end
 
 % Loading data
