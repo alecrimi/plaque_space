@@ -5,6 +5,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Param settings
 folders_list={'AB_old','AB_young','LCP_old','LCP_young','BACE1_old','BACE1_young'}; %
+% Better renaming folders with minus not underscore as AB-young rather than AB_young, 
+% Otherwise the legends will be weird
 
 %Change this to change the used features
 feature_name = 'sizes' ;   
