@@ -9,6 +9,10 @@ folders_list={'AB_old','AB_young','LCP_old','LCP_young','BACE1_old','BACE1_young
 %Change this to change the used features
 feature_name = 'sizes' ;   
 %feature_name = 'intensities'; 
+disp('Remember the stochastic nature of T-SNE, run the algorithm several times to see different results');
+tsne_repetitions = 5;
+perplexity_values = [ 5 10];   
+plot_mean = 1; %0 for not plotting the mean of the clusters, 1 for yes
 
 %This should be defined automatically, but in the data produced by  Ehsan Dadgar-Kiani, the max projection was always giving data of this size 
 datasize_maxproj = 5250; 
@@ -18,10 +22,7 @@ n_samples = 55;
 %sorting = {'default'};
 %sorting = {'default','max_proj'};
 sorting = {'max_proj'};
-
-disp('Remember the stochastic nature of T-SNE, run the algorithm several times to see different results');
-tsne_repetitions = 5;
-perplexity_values = [ 5 10];        
+     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Core Script
