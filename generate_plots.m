@@ -14,7 +14,9 @@ feature_name = 'sizes' ;
 disp('Remember the stochastic nature of T-SNE, run the algorithm several times to see different results');
 tsne_repetitions = 5;
 perplexity_values = [ 5 10];   
-plot_mean = 1; %0 for not plotting the mean of the clusters, 1 for yes
+% Be aware that the Alpha transparency works only from version 2019a
+plot_mean = 1; %0 for not plotting the mean of the clusters, 1 for yes 
+
 
 %This should be defined automatically, but in the data produced by  Ehsan Dadgar-Kiani, the max projection was always giving data of this size 
 datasize_maxproj = 5250; 
@@ -148,8 +150,8 @@ for ss = 1 : length(sorting)
              ylabel('Second component')
              %Be careful that this order is consistent with the folder list provided at the beginning of the script
              lgd = legend(folders_list{1},folders_list{3},folders_list{5}, [folders_list{1} 'C'],[folders_list{3} 'C'] ,[ folders_list{5} 'C']);
-             saveas(gcf,['TNSE_val_mean_ch_old' num2str(channel) '_sorting' alg '.png']);
-             saveas(gcf,['TNSE_val_mean_ch_old' num2str(channel) '_sorting' alg '.eps']);
+             saveas(gcf,['TNSE_val_mean_' sorting '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.png']);
+             saveas(gcf,['TNSE_val_mean_'sorting  '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.eps']);
               
              %Plot YOUNG groups
              % Assure that order matches the list provided at the begining of the script
@@ -194,8 +196,8 @@ for ss = 1 : length(sorting)
              ylabel('Second component')
              %Be careful that this order is consistent with the folder list provided at the beginning of the script
              lgd = legend(folders_list{2},folders_list{4},folders_list{6}, [folders_list{2} 'C'],[folders_list{4} 'C'],[folders_list{6} 'C']);
-             saveas(gcf,['TNSE_val_mean_sorting' feature_name '_' alg 'perp_' num2str(perplexity_values(hh)) 'rep_' num2str(jj) '.png']);
-             saveas(gcf,['TNSE_val_mean_sorting' feature_name '_' alg 'perp_' num2str(perplexity_values(hh)) 'rep_' num2str(jj) '.eps']);
+             saveas(gcf,['TNSE_val_mean_' sorting '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.png']);
+             saveas(gcf,['TNSE_val_mean_'sorting  '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.eps']);
             
             end
        end
