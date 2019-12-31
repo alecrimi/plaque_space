@@ -150,7 +150,7 @@ for ss = 1 : length(sorting)
              %Be careful that this order is consistent with the folder list provided at the beginning of the script
              lgd = legend(folders_list{1},folders_list{3},folders_list{5}, [folders_list{1} 'C'],[folders_list{3} 'C'] ,[ folders_list{5} 'C']);
              saveas(gcf,['TNSE_val_mean_' sorting '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.png']);
-             saveas(gcf,['TNSE_val_mean_' sorting '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.eps']);
+             saveas(gcf,['TNSE_val_mean_' sorting '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.eps'],'epsc');
               
              %Plot YOUNG groups
              % Assure that order matches the list provided at the begining of the script
@@ -196,7 +196,7 @@ for ss = 1 : length(sorting)
              %Be careful that this order is consistent with the folder list provided at the beginning of the script
              lgd = legend(folders_list{2},folders_list{4},folders_list{6}, [folders_list{2} 'C'],[folders_list{4} 'C'],[folders_list{6} 'C']);
              saveas(gcf,['TNSE_val_mean_' sorting '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.png']);
-             saveas(gcf,['TNSE_val_mean_' sorting '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.eps']);
+             saveas(gcf,['TNSE_val_mean_' sorting '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.eps'],'epsc');
             
             end
        end
