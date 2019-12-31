@@ -16,7 +16,7 @@ tsne_repetitions = 5;
 perplexity_values = [ 5 10];   
 % Be aware that the Alpha transparency works only from version 2019a
 plot_mean = 1; %0 for not plotting the mean of the clusters, 1 for yes 
-
+%Be aware that the alpha transparency in plot works only from the version of Matlab 2019a and beyond
 
 %This should be defined automatically, but in the data produced by  Ehsan Dadgar-Kiani, the max projection was always giving data of this size 
 datasize_maxproj = 5250; 
@@ -36,9 +36,9 @@ for ss = 1 : length(sorting)
 
      alg = sorting{ss};
      if( strcmp(alg,'max_proj'))
-       datapoints =  zeros(n_samples,  datasize_maxproj );     %58464  69564
+       datapoints =  zeros(n_samples,  datasize_maxproj );    
      else
-       datapoints =  zeros(n_samples,  datasize );     %58464  69564 
+       datapoints =  zeros(n_samples,  datasize );    
      end
 
 % Loading data
@@ -139,11 +139,11 @@ for ss = 1 : length(sorting)
                 c =  plot(mean(score(1,38:41)),mean(score(2,38:41)),'ro');
                 c.Color(4) = 0.3; % This set the alpha value of the mean
              end             
-       %      plot(score(1,48:51),score(2,48:51),'ko')
-         %    if(plot_mean)
-       %         c =  plot(mean(score(1,48:51)),mean(score(2,48:51)),'ko');
-      %          c.Color(4) = 0.3; % This set the alpha value of the mean
-         %    end   
+            plot(score(1,48:51),score(2,48:51),'ko')
+             if(plot_mean)
+                c =  plot(mean(score(1,48:51)),mean(score(2,48:51)),'ko');
+               c.Color(4) = 0.3; % This set the alpha value of the mean
+             end   
              hold off
              box on
              xlabel('First component')
@@ -151,7 +151,7 @@ for ss = 1 : length(sorting)
              %Be careful that this order is consistent with the folder list provided at the beginning of the script
              lgd = legend(folders_list{1},folders_list{3},folders_list{5}, [folders_list{1} 'C'],[folders_list{3} 'C'] ,[ folders_list{5} 'C']);
              saveas(gcf,['TNSE_val_mean_' sorting '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.png']);
-             saveas(gcf,['TNSE_val_mean_'sorting  '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.eps']);
+             saveas(gcf,['TNSE_val_mean_' sorting '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.eps']);
               
              %Plot YOUNG groups
              % Assure that order matches the list provided at the begining of the script
@@ -183,11 +183,11 @@ for ss = 1 : length(sorting)
                 c =  plot(mean(score(1,42:47)),mean(score(2,42:47)),'co');
                 c.Color(4) = 0.3; % This set the alpha value of the mean
              end  
-        %     plot(score(1,51:55),score(2,51:55),'mo')
-      %       if(plot_mean)
-     %           c =  plot(mean(score(1,51:55)),mean(score(2,51:51:55)),'ro');
-      %          c.Color(4) = 0.3; % This set the alpha value of the mean
-      %       end  
+              plot(score(1,51:55),score(2,51:55),'mo')
+             if(plot_mean)
+                c =  plot(mean(score(1,51:55)),mean(score(2,51:51:55)),'ro');
+                 c.Color(4) = 0.3; % This set the alpha value of the mean
+             end  
              lgd = legend(folders_list{2},folders_list{4},folders_list{6} );
 
              hold off
@@ -197,7 +197,7 @@ for ss = 1 : length(sorting)
              %Be careful that this order is consistent with the folder list provided at the beginning of the script
              lgd = legend(folders_list{2},folders_list{4},folders_list{6}, [folders_list{2} 'C'],[folders_list{4} 'C'],[folders_list{6} 'C']);
              saveas(gcf,['TNSE_val_mean_' sorting '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.png']);
-             saveas(gcf,['TNSE_val_mean_'sorting  '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.eps']);
+             saveas(gcf,['TNSE_val_mean_' sorting '_' feature_name '_' alg '_perp_' num2str(perplexity_values(hh)) '_rep_' num2str(jj) '.eps']);
             
             end
        end
