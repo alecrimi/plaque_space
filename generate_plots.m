@@ -104,18 +104,42 @@ for ss = 1 : length(sorting)
         for jj = 1 : tsne_repetitions
              score = tsne(datapoints,'Algorithm','exact','Distance','euclidean','Perplexity',perplexity_values(hh));
              score = score';
- 
+  
              %Plot OLD groups
              % Assure that order matches the list provided at the begining of the script
              % Improvement: set those numbers automatically!
              figure
              hold on
              plot(score(1,1:3),score(2,1:3),'b*')
+             if(plot_mean)
+                c =  plot(mean(score(1,1:3)),mean(score(2,1:3)),'b*');
+                c.Color(4) = 0.3; % This set the alpha value of the mean
+             end
              plot(score(1,10:13),score(2,10:13),'r*')
+             if(plot_mean)
+                c =  plot(mean(score(1,10:13)),mean(score(2,10:13)),'r*');
+                c.Color(4) = 0.3; % This set the alpha value of the mean
+             end
              plot(score(1,20:24),score(2,20:24),'k*')
+             if(plot_mean)
+                c =  plot(mean(score(1,20:24)),mean(score(2,20:24)),'k*');
+                c.Color(4) = 0.3; % This set the alpha value of the mean
+             end             
              plot(score(1,28:33),score(2,28:33),'bo')
+             if(plot_mean)
+                c =  plot(mean(score(1,28:33)),mean(score(2,28:33)),'bo');
+                c.Color(4) = 0.3; % This set the alpha value of the mean
+             end 
              plot(score(1,38:41),score(2,38:41),'ro')
-             plot(score(1,48:51),score(2,48:51),'ko')
+             if(plot_mean)
+                c =  plot(mean(score(1,38:41)),mean(score(2,38:41)),'ro');
+                c.Color(4) = 0.3; % This set the alpha value of the mean
+             end             
+       %      plot(score(1,48:51),score(2,48:51),'ko')
+         %    if(plot_mean)
+       %         c =  plot(mean(score(1,48:51)),mean(score(2,48:51)),'ko');
+      %          c.Color(4) = 0.3; % This set the alpha value of the mean
+         %    end   
              hold off
              box on
              xlabel('First component')
@@ -131,11 +155,35 @@ for ss = 1 : length(sorting)
              figure
              hold on
              plot(score(1,4:9),score(2,4:9),'g*')
+             if(plot_mean)
+                c =  plot(mean(score(1,4:9)),mean(score(2,4:9)),'g*');
+                c.Color(4) = 0.3; % This set the alpha value of the mean
+             end  
              plot(score(1,14:19),score(2,14:19),'c*')
+             if(plot_mean)
+                c =  plot(mean(score(1,14:19)),mean(score(2,14:19)),'c*');
+                c.Color(4) = 0.3; % This set the alpha value of the mean
+             end  
              plot(score(1,25:27),score(2,25:27),'m*')
+             if(plot_mean)
+                c =  plot(mean(score(1,25:27)),mean(score(2,25:27)),'m*');
+                c.Color(4) = 0.3; % This set the alpha value of the mean
+             end  
              plot(score(1,34:37),score(2,34:37),'go')
+             if(plot_mean)
+                c =  plot(mean(score(1,34:37)),mean(score(2,34:37)),'go');
+                c.Color(4) = 0.3; % This set the alpha value of the mean
+             end  
              plot(score(1,42:47),score(2,42:47),'co')
-             plot(score(1,51:55),score(2,51:55),'mo')
+             if(plot_mean)
+                c =  plot(mean(score(1,42:47)),mean(score(2,42:47)),'co');
+                c.Color(4) = 0.3; % This set the alpha value of the mean
+             end  
+        %     plot(score(1,51:55),score(2,51:55),'mo')
+      %       if(plot_mean)
+     %           c =  plot(mean(score(1,51:55)),mean(score(2,51:51:55)),'ro');
+      %          c.Color(4) = 0.3; % This set the alpha value of the mean
+      %       end  
              lgd = legend(folders_list{2},folders_list{4},folders_list{6} );
 
              hold off
