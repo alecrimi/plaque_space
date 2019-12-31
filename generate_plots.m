@@ -16,7 +16,6 @@ tsne_repetitions = 5;
 perplexity_values = [ 5 10];   
 % Be aware that the Alpha transparency works only from version 2019a
 plot_mean = 1; %0 for not plotting the mean of the clusters, 1 for yes 
-%Be aware that the alpha transparency in plot works only from the version of Matlab 2019a and beyond
 
 %This should be defined automatically, but in the data produced by  Ehsan Dadgar-Kiani, the max projection was always giving data of this size 
 datasize_maxproj = 5250; 
