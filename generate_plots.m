@@ -14,7 +14,7 @@ feature_name = 'sizes' ;
 disp('Remember the stochastic nature of T-SNE, run the algorithm several times to see different results');
 tsne_repetitions = 5;
 perplexity_values = [ 5 10];   
-% Be aware that the Alpha transparency works only from version 2019a
+% WARNING! Be aware that the Alpha transparency works only from version 2019a (FOR PLOTTING MEAN POINT)
 plot_mean = 1; %0 for not plotting the mean of the clusters, 1 for yes 
 
 %This should be defined automatically, but in the data produced by  Ehsan Dadgar-Kiani, the max projection was always giving data of this size 
@@ -49,7 +49,7 @@ for ss = 1 : length(sorting)
           ll
         %All Cases
         list = dir(strcat(folders_list{ll},'/treated'));
-        for k = 3 : length(list) %Skiup empty folder
+        for k = 3 : length(list) %Skip empty folder
            
             if( strcmp(alg,'max_proj'))
                   datapoints(count,:) =  load_tiff_maxproj( strcat(folders_list{ll}, '/treated/' ,list(k).name,'/whole/cells_heatmap_',feature_name ,'_mean_15px.tif'),channel) ;
@@ -61,7 +61,7 @@ for ss = 1 : length(sorting)
         
         %All Control
         list = dir(strcat(folders_list{ll},'/CTRL'));
-        for k = 3 : length(list) %Skiup empty folder
+        for k = 3 : length(list) %Skip empty folder
  
             if( strcmp(alg,'max_proj'))
                   datapoints(count,:) =  load_tiff_maxproj( strcat(folders_list{ll}, '/CTRL/' ,list(k).name,'/whole/cells_heatmap_',feature_name ,'_mean_15px.tif'),channel) ;
