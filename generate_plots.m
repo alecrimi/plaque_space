@@ -4,6 +4,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Param settings
+% THIS IS THE ORDER DATA WILL BE LOADED, keep it in mind as also plots will reflect this
 folders_list={'AB_old','AB_young','LCP_old','LCP_young','BACE1_old','BACE1_young'}; %
 % Better renaming folders with minus not underscore as AB-young rather than AB_young, 
 % Otherwise the legends will be weird
